@@ -1,0 +1,159 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Game_over_HUD.gd" type="Script" id=1]
+[ext_resource path="res://platformer-p15-assets/more fonts/Downtown Elegance Bold Italic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://platformer-p15-assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://font/UbuntuMono-RI.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Restart1.gd" type="Script" id=5]
+[ext_resource path="res://MainMenu.gd" type="Script" id=6]
+[ext_resource path="res://coin_symbol.png" type="Texture" id=7]
+[ext_resource path="res://layers/dawn/Reference-Image.png" type="Texture" id=8]
+[ext_resource path="res://layers/Parallax Forest Background - Blue/03_Particles.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_size = 20
+outline_color = Color( 0.32549, 0.372549, 0.466667, 1 )
+extra_spacing_top = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.466667, 0.537255, 0.501961, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.137255, 0.172549, 0.368627, 0.392157 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=7]
+size = 70
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 70
+font_data = ExtResource( 4 )
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+margin_left = -504.0
+margin_top = -384.0
+margin_right = 1728.0
+margin_bottom = 1048.0
+color = Color( 0.317647, 0.0235294, 0.0235294, 1 )
+
+[node name="Reference-Image" type="Sprite" parent="Pause/ColorRect"]
+position = Vector2( 1016, 684 )
+scale = Vector2( 0.517172, 0.555556 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Pause/ColorRect"]
+margin_left = 647.0
+margin_top = 427.0
+margin_right = 1385.0
+margin_bottom = 571.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.741176, 0.423529, 0.423529, 1 )
+custom_colors/font_color_shadow = Color( 0.309804, 0.686275, 0.313726, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "GAME OVER"
+
+[node name="Panel" type="Panel" parent="Pause/ColorRect"]
+modulate = Color( 0.819608, 0.819608, 0.819608, 0.690196 )
+margin_left = 752.0
+margin_top = 664.0
+margin_right = 1276.0
+margin_bottom = 951.0
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/ColorRect/Panel"]
+anchor_left = 0.5
+anchor_top = 0.622
+anchor_right = 0.5
+anchor_bottom = 0.622
+margin_left = -135.0
+margin_top = -136.514
+margin_right = 155.0
+margin_bottom = 66.486
+custom_constants/separation = 20
+
+[node name="Restart1" type="Button" parent="Pause/ColorRect/Panel/VBoxContainer"]
+margin_right = 290.0
+margin_bottom = 91.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "RESTART"
+script = ExtResource( 5 )
+
+[node name="MainMenu" type="Button" parent="Pause/ColorRect/Panel/VBoxContainer"]
+margin_top = 111.0
+margin_right = 290.0
+margin_bottom = 203.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "MAIN MENU"
+script = ExtResource( 6 )
+
+[node name="03Particles" type="Sprite" parent="Pause/ColorRect"]
+position = Vector2( 1057, 651 )
+texture = ExtResource( 9 )
+
+[node name="Game_over_HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="Game_over_HUD"]
+margin_left = 360.0
+margin_top = 195.0
+margin_right = 671.0
+margin_bottom = 271.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="Game_over_HUD"]
+margin_left = 387.0
+margin_top = 197.0
+margin_right = 457.0
+margin_bottom = 263.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="=" type="Label" parent="Game_over_HUD"]
+margin_left = 477.0
+margin_top = 192.0
+margin_right = 516.0
+margin_bottom = 263.0
+custom_colors/font_color = Color( 0.988235, 0.72549, 0.0352941, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "="
+
+[node name="Coins" type="Label" parent="Game_over_HUD"]
+margin_left = 537.0
+margin_top = 195.0
+margin_right = 642.0
+margin_bottom = 266.0
+custom_colors/font_color = Color( 0.988235, 0.72549, 0.0352941, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "00"
+valign = 1

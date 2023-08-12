@@ -1,0 +1,149 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://font/19076.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://layers/Parallax Forest Background - Blue/03_Particles.png" type="Texture" id=2]
+[ext_resource path="res://layers/Parallax Forest Background - Blue/05_Particles.png" type="Texture" id=3]
+[ext_resource path="res://TitleMenu.gd" type="Script" id=4]
+[ext_resource path="res://platformer-p15-assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Game_Assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 125
+outline_size = 10
+outline_color = Color( 0.658824, 0.647059, 0.647059, 1 )
+extra_spacing_top = 20
+extra_spacing_char = 3
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
+
+[node name="TitleMenu" type="Control"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = -0.68
+anchor_top = -0.56
+anchor_right = 2.016
+anchor_bottom = 1.64
+margin_left = -11.68
+margin_top = -4.0
+margin_right = 14.616
+margin_bottom = 22.5999
+color = Color( 0, 0, 0, 1 )
+
+[node name="03Particles" type="Sprite" parent="."]
+position = Vector2( 356, 334 )
+scale = Vector2( 1.10417, 1.23333 )
+texture = ExtResource( 2 )
+
+[node name="05Particles" type="Sprite" parent="."]
+position = Vector2( 394, 328 )
+scale = Vector2( 1.14375, 1.23333 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 432.0
+margin_right = 1083.0
+margin_bottom = 187.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.905882, 0.513726, 0.513726, 1 )
+custom_constants/shadow_offset_x = 3
+custom_fonts/font = SubResource( 1 )
+text = "SHEN  RUN"
+
+[node name="MusicTitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0.717647, 0.52549, 0.52549, 0.592157 )
+margin_right = 360.0
+margin_bottom = 520.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -1.0
+margin_right = 304.0
+margin_bottom = 391.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+margin_right = 305.0
+margin_bottom = 79.0
+custom_colors/font_color_disabled = Color( 0.0235294, 0.960784, 0.894118, 1 )
+custom_colors/font_color_focus = Color( 0.0901961, 0.0823529, 0.960784, 1 )
+custom_colors/font_color = Color( 0.137255, 0.952941, 0.568627, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "PLAY!"
+flat = true
+
+[node name="Levels" type="Button" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 305.0
+margin_bottom = 183.0
+custom_colors/font_color_disabled = Color( 0.0235294, 0.960784, 0.894118, 1 )
+custom_colors/font_color_focus = Color( 0.0901961, 0.0823529, 0.960784, 1 )
+custom_colors/font_color = Color( 0.137255, 0.952941, 0.568627, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "LEVELS"
+flat = true
+
+[node name="Character" type="Button" parent="VBoxContainer"]
+margin_top = 208.0
+margin_right = 305.0
+margin_bottom = 287.0
+custom_colors/font_color_disabled = Color( 0.0235294, 0.960784, 0.894118, 1 )
+custom_colors/font_color_focus = Color( 0.0901961, 0.0823529, 0.960784, 1 )
+custom_colors/font_color = Color( 0.137255, 0.952941, 0.568627, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "CHARACTERS"
+flat = true
+
+[node name="HELP" type="Button" parent="VBoxContainer"]
+margin_top = 312.0
+margin_right = 305.0
+margin_bottom = 391.0
+custom_colors/font_color_disabled = Color( 0.0235294, 0.960784, 0.894118, 1 )
+custom_colors/font_color_focus = Color( 0.0901961, 0.0823529, 0.960784, 1 )
+custom_colors/font_color = Color( 0.137255, 0.952941, 0.568627, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "HELP"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 416.0
+margin_right = 305.0
+margin_bottom = 495.0
+custom_colors/font_color_disabled = Color( 0.0235294, 0.960784, 0.894118, 1 )
+custom_colors/font_color_focus = Color( 0.0901961, 0.0823529, 0.960784, 1 )
+custom_colors/font_color = Color( 0.137255, 0.952941, 0.568627, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "EXIT"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_Levels_pressed"]
+[connection signal="pressed" from="VBoxContainer/Character" to="." method="_on_Character_pressed"]
+[connection signal="pressed" from="VBoxContainer/HELP" to="." method="_on_HELP_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

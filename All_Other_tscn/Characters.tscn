@@ -1,0 +1,397 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://platformer-p15-assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://platformer-p15-assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Characters.gd" type="Script" id=3]
+[ext_resource path="res://MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Game_Assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=5]
+[ext_resource path="res://platformer-p15-assets/UI/grey_button04.png" type="Texture" id=6]
+[ext_resource path="res://extras/egs1.png" type="Texture" id=7]
+[ext_resource path="res://layers/Parallax Forest Background - Blue/03_Particles.png" type="Texture" id=8]
+[ext_resource path="res://extras/egs3.png" type="Texture" id=9]
+[ext_resource path="res://extras/egs6.png" type="Texture" id=10]
+[ext_resource path="res://extras/egs2.png" type="Texture" id=11]
+[ext_resource path="res://extras/egs4.png" type="Texture" id=12]
+[ext_resource path="res://extras/egs5.png" type="Texture" id=13]
+[ext_resource path="res://extras/egs.png" type="Texture" id=14]
+[ext_resource path="res://coin_symbol.png" type="Texture" id=15]
+[ext_resource path="res://font/UbuntuMono-RI.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+extra_spacing_top = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+outline_size = 2
+outline_color = Color( 0.301961, 0.235294, 0.858824, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.137255, 0.172549, 0.368627, 0.392157 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=10]
+size = 70
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 60
+font_data = ExtResource( 16 )
+
+[node name="Characters" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="characters" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="ColorRect" type="ColorRect" parent="characters"]
+anchor_left = 0.788
+anchor_top = 0.777
+anchor_right = 0.788
+anchor_bottom = 0.777
+margin_left = -2015.91
+margin_top = -1218.2
+margin_right = 2015.09
+margin_bottom = 1217.8
+color = Color( 0, 0, 0, 1 )
+
+[node name="Panel2" type="Panel" parent="characters/ColorRect"]
+margin_left = 1422.0
+margin_top = 782.0
+margin_right = 2041.0
+margin_bottom = 905.0
+
+[node name="Label" type="Label" parent="characters/ColorRect/Panel2"]
+margin_left = -125.002
+margin_top = 1.99994
+margin_right = 607.998
+margin_bottom = 146.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "       CHARACTERS"
+uppercase = true
+
+[node name="Panel" type="Panel" parent="characters/ColorRect"]
+anchor_left = 0.427
+anchor_top = 0.466
+anchor_right = 0.427
+anchor_bottom = 0.466
+margin_left = -466.237
+margin_top = -219.176
+margin_right = 463.763
+margin_bottom = 207.824
+
+[node name="levels" type="GridContainer" parent="characters/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -726.5
+margin_top = -290.0
+margin_right = 138.5
+margin_bottom = 122.0
+columns = 2
+
+[node name="1" type="Button" parent="characters/ColorRect/levels"]
+margin_right = 431.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "TOM"
+icon = ExtResource( 11 )
+icon_align = 2
+expand_icon = true
+
+[node name="2" type="Button" parent="characters/ColorRect/levels"]
+margin_left = 435.0
+margin_right = 865.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "TABAQUI"
+icon = ExtResource( 9 )
+icon_align = 2
+expand_icon = true
+
+[node name="price1" type="Button" parent="characters/ColorRect/levels/2"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                    200"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="3" type="Button" parent="characters/ColorRect/levels"]
+margin_top = 104.0
+margin_right = 431.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "TAU jii"
+icon = ExtResource( 12 )
+icon_align = 2
+expand_icon = true
+
+[node name="price2" type="Button" parent="characters/ColorRect/levels/3"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                   500"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="4" type="Button" parent="characters/ColorRect/levels"]
+margin_left = 435.0
+margin_top = 104.0
+margin_right = 865.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+text = "LILY"
+icon = ExtResource( 14 )
+icon_align = 2
+expand_icon = true
+
+[node name="price3" type="Button" parent="characters/ColorRect/levels/4"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                      1000"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="5" type="Button" parent="characters/ColorRect/levels"]
+margin_top = 208.0
+margin_right = 431.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "CYBORG"
+icon = ExtResource( 10 )
+icon_align = 2
+expand_icon = true
+
+[node name="price4" type="Button" parent="characters/ColorRect/levels/5"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                     1200"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="6" type="Button" parent="characters/ColorRect/levels"]
+margin_left = 435.0
+margin_top = 208.0
+margin_right = 865.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+text = "HINATA"
+icon = ExtResource( 7 )
+icon_align = 2
+expand_icon = true
+
+[node name="price5" type="Button" parent="characters/ColorRect/levels/6"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                      1500"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="7" type="Button" parent="characters/ColorRect/levels"]
+margin_top = 312.0
+margin_right = 431.0
+margin_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+text = "SHEN"
+icon = ExtResource( 13 )
+icon_align = 2
+expand_icon = true
+
+[node name="price6" type="Button" parent="characters/ColorRect/levels/7"]
+modulate = Color( 1, 1, 1, 0.890196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.905882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "                  2000"
+icon = ExtResource( 15 )
+icon_align = 1
+
+[node name="03Particles" type="Sprite" parent="characters/ColorRect"]
+position = Vector2( 1705, 1032 )
+scale = Vector2( 0.716667, 0.859259 )
+texture = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="characters"]
+modulate = Color( 0.337255, 0.309804, 0.309804, 0.509804 )
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 210.0
+margin_bottom = 65.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="characters"]
+modulate = Color( 0.337255, 0.309804, 0.309804, 0.509804 )
+margin_left = 840.0
+margin_top = 16.0
+margin_right = 1022.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="MainMenu" type="Button" parent="characters"]
+margin_left = 33.0
+margin_top = 22.0
+margin_right = 190.0
+margin_bottom = 72.0
+custom_colors/font_color_disabled = Color( 0.964706, 0.878431, 0.878431, 1 )
+custom_colors/font_color_focus = Color( 0.0156863, 0.988235, 0.713726, 1 )
+custom_colors/font_color = Color( 0.988235, 0.698039, 0.0156863, 1 )
+custom_colors/font_color_hover = Color( 0.913725, 0.729412, 0.027451, 1 )
+custom_colors/font_color_pressed = Color( 0.968627, 0.0117647, 0.0117647, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "MAIN MENU"
+flat = true
+script = ExtResource( 4 )
+
+[node name="STATS" type="Button" parent="characters"]
+margin_left = 856.0
+margin_top = 16.0
+margin_right = 1013.0
+margin_bottom = 66.0
+custom_colors/font_color_disabled = Color( 0.964706, 0.878431, 0.878431, 1 )
+custom_colors/font_color_focus = Color( 0.0156863, 0.988235, 0.713726, 1 )
+custom_colors/font_color = Color( 0.988235, 0.698039, 0.0156863, 1 )
+custom_colors/font_color_hover = Color( 0.913725, 0.729412, 0.027451, 1 )
+custom_colors/font_color_pressed = Color( 0.968627, 0.0117647, 0.0117647, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "STATS"
+flat = true
+
+[node name="MusicTitleScreen" type="AudioStreamPlayer" parent="characters"]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Character_Menu_HUD" type="CanvasLayer" parent="."]
+scale = Vector2( 0.65, 0.8 )
+transform = Transform2D( 0.65, 0, 0, 0.8, 0, 0 )
+
+[node name="Panel" type="Panel" parent="Character_Menu_HUD"]
+margin_left = 6.0
+margin_top = 102.0
+margin_right = 321.0
+margin_bottom = 178.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="Character_Menu_HUD"]
+margin_left = 35.3333
+margin_top = 103.75
+margin_right = 105.333
+margin_bottom = 169.75
+texture = ExtResource( 15 )
+expand = true
+
+[node name="=" type="Label" parent="Character_Menu_HUD"]
+margin_left = 125.333
+margin_top = 98.75
+margin_right = 164.333
+margin_bottom = 169.75
+custom_colors/font_color = Color( 0.988235, 0.72549, 0.0352941, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "="
+
+[node name="Coins" type="Label" parent="Character_Menu_HUD"]
+margin_left = 170.769
+margin_top = 102.5
+margin_right = 275.769
+margin_bottom = 173.5
+custom_colors/font_color = Color( 0.988235, 0.72549, 0.0352941, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "00"
+valign = 1
+
+[connection signal="pressed" from="characters/ColorRect/levels/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/2/price1" to="." method="_on_price1_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/3/price2" to="." method="_on_price2_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/4/price3" to="." method="_on_price3_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/5/price4" to="." method="_on_price4_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/6/price5" to="." method="_on_price5_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="characters/ColorRect/levels/7/price6" to="." method="_on_price6_pressed"]
+[connection signal="pressed" from="characters/MainMenu" to="characters/MainMenu" method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="characters/STATS" to="." method="_on_STATS_pressed"]

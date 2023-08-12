@@ -1,0 +1,147 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://layers/Combined Background Images/background.png" type="Texture" id=1]
+[ext_resource path="res://ScrollContainer.gd" type="Script" id=2]
+[ext_resource path="res://extras/egs3.png" type="Texture" id=3]
+[ext_resource path="res://extras/egs.png" type="Texture" id=4]
+[ext_resource path="res://extras/egs6.png" type="Texture" id=5]
+[ext_resource path="res://extras/egs1.png" type="Texture" id=6]
+[ext_resource path="res://extras/egs2.png" type="Texture" id=7]
+[ext_resource path="res://extras/egs4.png" type="Texture" id=8]
+[ext_resource path="res://extras/egs5.png" type="Texture" id=9]
+[ext_resource path="res://Game_Assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=10]
+[ext_resource path="res://platformer-p15-assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://PlayButton.gd" type="Script" id=12]
+[ext_resource path="res://platformer-p15-assets/UI/grey_button04.png" type="Texture" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 10
+font_data = ExtResource( 11 )
+
+[node name="Character_Menu" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 101.0
+margin_bottom = -101.0
+rect_clip_content = false
+mouse_filter = 1
+custom_styles/bg = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+margin_top = 10.0
+margin_right = 5448.0
+margin_bottom = 376.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/CenterContainer"]
+margin_top = 33.0
+margin_right = 5448.0
+margin_bottom = 333.0
+mouse_filter = 2
+custom_constants/margin_right = 1024
+custom_constants/margin_left = 1024
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/MarginContainer"]
+margin_left = 1024.0
+margin_right = 4424.0
+margin_bottom = 300.0
+mouse_filter = 2
+custom_constants/separation = 100
+
+[node name="CardMenu1" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_right = 400.0
+margin_bottom = 300.0
+texture = ExtResource( 7 )
+
+[node name="CardMenu2" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 500.0
+margin_right = 900.0
+margin_bottom = 300.0
+texture = ExtResource( 3 )
+
+[node name="CardMenu3" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 1000.0
+margin_right = 1400.0
+margin_bottom = 300.0
+texture = ExtResource( 8 )
+
+[node name="CardMenu4" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 1500.0
+margin_right = 1900.0
+margin_bottom = 300.0
+texture = ExtResource( 4 )
+
+[node name="CardMenu5" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 2000.0
+margin_right = 2400.0
+margin_bottom = 300.0
+texture = ExtResource( 5 )
+
+[node name="CardMenu6" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 2500.0
+margin_right = 2900.0
+margin_bottom = 300.0
+texture = ExtResource( 6 )
+
+[node name="CardMenu7" type="TextureRect" parent="ScrollContainer/CenterContainer/MarginContainer/HBoxContainer"]
+margin_left = 3000.0
+margin_right = 3400.0
+margin_bottom = 300.0
+texture = ExtResource( 9 )
+
+[node name="MusicTitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color( 0.917647, 0.611765, 0.611765, 1 )
+margin_left = 8.0
+margin_top = 14.0
+margin_right = 333.0
+margin_bottom = 87.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="Character" type="Button" parent="."]
+margin_left = 17.0
+margin_top = 12.0
+margin_right = 322.0
+margin_bottom = 91.0
+custom_colors/font_color_disabled = Color( 0.87451, 0.647059, 0.0392157, 1 )
+custom_colors/font_color_focus = Color( 0.337255, 0.615686, 0.0823529, 1 )
+custom_colors/font_color = Color( 0.384314, 0.486275, 0.439216, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.0941176, 0.454902, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.466667, 0.466667, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "CHARACTERS"
+flat = true
+script = ExtResource( 12 )
+
+[connection signal="gui_input" from="ScrollContainer" to="ScrollContainer" method="_on_ScrollContainer_gui_input"]
+[connection signal="pressed" from="Character" to="ScrollContainer" method="_on_Character_pressed"]
