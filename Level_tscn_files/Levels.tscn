@@ -1,0 +1,430 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://platformer-p15-assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game_Assets/layers/main_scene.png" type="Texture" id=2]
+[ext_resource path="res://platformer-p15-assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://layers/Combined Background Images/Combined background - Blue.png" type="Texture" id=4]
+[ext_resource path="res://layers/dawn/Reference-Image.png" type="Texture" id=5]
+[ext_resource path="res://layers/glacial/background_glacial_mountains.png" type="Texture" id=6]
+[ext_resource path="res://layers/Combined Background Images/level3preview.png" type="Texture" id=7]
+[ext_resource path="res://MainMenu.gd" type="Script" id=8]
+[ext_resource path="res://platformer-p15-assets/UI/grey_button04.png" type="Texture" id=9]
+[ext_resource path="res://layers/Parallax Forest Background - Blue/03_Particles.png" type="Texture" id=10]
+[ext_resource path="res://Game_Assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Levels.gd" type="Script" id=12]
+[ext_resource path="res://Stars_hud1.gd" type="Script" id=13]
+[ext_resource path="res://extras/G22-HUD-Hearts/hud_star_empty.png" type="Texture" id=14]
+[ext_resource path="res://extras/G22-HUD-Hearts/hud_star_full.png" type="Texture" id=15]
+[ext_resource path="res://Stars_hud2.gd" type="Script" id=16]
+[ext_resource path="res://Stars_hud5.gd" type="Script" id=17]
+[ext_resource path="res://Stars_hud3.gd" type="Script" id=18]
+[ext_resource path="res://Stars_hud4.gd" type="Script" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0.188235 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+outline_size = 2
+outline_color = Color( 0.301961, 0.235294, 0.858824, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Levels" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+script = ExtResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.788
+anchor_top = 0.777
+anchor_right = 0.788
+anchor_bottom = 0.777
+margin_left = -2015.91
+margin_top = -1218.2
+margin_right = 2015.09
+margin_bottom = 1217.8
+color = Color( 0, 0, 0, 1 )
+
+[node name="Panel2" type="Panel" parent="ColorRect"]
+margin_left = 1556.0
+margin_top = 764.0
+margin_right = 1907.0
+margin_bottom = 923.0
+
+[node name="Label" type="Label" parent="ColorRect/Panel2"]
+margin_left = -121.0
+margin_top = 17.9999
+margin_right = 453.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "       LEVELS"
+uppercase = true
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+anchor_left = 0.427
+anchor_top = 0.466
+anchor_right = 0.427
+anchor_bottom = 0.466
+margin_left = -450.237
+margin_top = -196.176
+margin_right = 450.763
+margin_bottom = 193.824
+
+[node name="levels" type="GridContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -699.5
+margin_top = -251.5
+margin_right = 111.5
+margin_bottom = 83.5
+columns = 2
+
+[node name="1" type="Button" parent="ColorRect/levels"]
+margin_right = 404.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "LEVEL 1"
+icon = ExtResource( 2 )
+icon_align = 2
+expand_icon = true
+
+[node name="Stars_hud1" type="CanvasLayer" parent="ColorRect/levels/1"]
+scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
+script = ExtResource( 13 )
+
+[node name="Panel_Stars" type="Panel" parent="ColorRect/levels/1/Stars_hud1"]
+margin_left = 270.0
+margin_top = 692.5
+margin_right = 452.0
+margin_bottom = 747.5
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsEmpty" type="TextureRect" parent="ColorRect/levels/1/Stars_hud1"]
+margin_left = 286.0
+margin_top = 692.5
+margin_right = 496.0
+margin_bottom = 762.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsFull" type="TextureRect" parent="ColorRect/levels/1/Stars_hud1"]
+margin_left = 284.0
+margin_top = 696.5
+margin_right = 494.0
+margin_bottom = 766.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="2" type="Button" parent="ColorRect/levels"]
+margin_left = 408.0
+margin_right = 811.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+disabled = true
+text = "LEVEL 2"
+icon = ExtResource( 4 )
+icon_align = 2
+expand_icon = true
+
+[node name="Stars_hud2" type="CanvasLayer" parent="ColorRect/levels/2"]
+scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
+script = ExtResource( 16 )
+
+[node name="Panel_Stars" type="Panel" parent="ColorRect/levels/2/Stars_hud2"]
+margin_left = 1295.0
+margin_top = 697.5
+margin_right = 1477.0
+margin_bottom = 752.5
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsEmpty" type="TextureRect" parent="ColorRect/levels/2/Stars_hud2"]
+margin_left = 1311.0
+margin_top = 697.5
+margin_right = 1521.0
+margin_bottom = 767.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsFull" type="TextureRect" parent="ColorRect/levels/2/Stars_hud2"]
+margin_left = 1309.0
+margin_top = 701.5
+margin_right = 1519.0
+margin_bottom = 771.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="3" type="Button" parent="ColorRect/levels"]
+margin_top = 113.0
+margin_right = 404.0
+margin_bottom = 222.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+disabled = true
+text = "LEVEL 3"
+icon = ExtResource( 7 )
+icon_align = 2
+expand_icon = true
+
+[node name="Stars_hud3" type="CanvasLayer" parent="ColorRect/levels/3"]
+scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
+script = ExtResource( 18 )
+
+[node name="Panel_Stars" type="Panel" parent="ColorRect/levels/3/Stars_hud3"]
+margin_left = 272.5
+margin_top = 980.0
+margin_right = 454.5
+margin_bottom = 1035.0
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsEmpty" type="TextureRect" parent="ColorRect/levels/3/Stars_hud3"]
+margin_left = 288.5
+margin_top = 980.0
+margin_right = 498.5
+margin_bottom = 1050.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsFull" type="TextureRect" parent="ColorRect/levels/3/Stars_hud3"]
+margin_left = 286.5
+margin_top = 984.0
+margin_right = 496.5
+margin_bottom = 1054.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="4" type="Button" parent="ColorRect/levels"]
+margin_left = 408.0
+margin_top = 113.0
+margin_right = 811.0
+margin_bottom = 222.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+disabled = true
+text = "LEVEL 4"
+icon = ExtResource( 5 )
+icon_align = 2
+expand_icon = true
+
+[node name="Stars_hud4" type="CanvasLayer" parent="ColorRect/levels/4"]
+scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
+script = ExtResource( 19 )
+
+[node name="Panel_Stars" type="Panel" parent="ColorRect/levels/4/Stars_hud4"]
+margin_left = 1295.0
+margin_top = 985.0
+margin_right = 1477.0
+margin_bottom = 1040.0
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsEmpty" type="TextureRect" parent="ColorRect/levels/4/Stars_hud4"]
+margin_left = 1311.0
+margin_top = 985.0
+margin_right = 1521.0
+margin_bottom = 1055.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsFull" type="TextureRect" parent="ColorRect/levels/4/Stars_hud4"]
+margin_left = 1309.0
+margin_top = 989.0
+margin_right = 1519.0
+margin_bottom = 1059.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="5" type="Button" parent="ColorRect/levels"]
+margin_top = 226.0
+margin_right = 404.0
+margin_bottom = 335.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+disabled = true
+text = "LEVEL 5"
+icon = ExtResource( 6 )
+icon_align = 2
+expand_icon = true
+
+[node name="Stars_hud5" type="CanvasLayer" parent="ColorRect/levels/5"]
+scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
+script = ExtResource( 17 )
+
+[node name="Panel_Stars" type="Panel" parent="ColorRect/levels/5/Stars_hud5"]
+margin_left = 267.5
+margin_top = 1262.5
+margin_right = 449.5
+margin_bottom = 1317.5
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsEmpty" type="TextureRect" parent="ColorRect/levels/5/Stars_hud5"]
+margin_left = 283.5
+margin_top = 1262.5
+margin_right = 493.5
+margin_bottom = 1332.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StarsFull" type="TextureRect" parent="ColorRect/levels/5/Stars_hud5"]
+margin_left = 281.5
+margin_top = 1266.5
+margin_right = 491.5
+margin_bottom = 1336.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="03Particles" type="Sprite" parent="ColorRect"]
+position = Vector2( 1705, 1032 )
+scale = Vector2( 0.716667, 0.859259 )
+texture = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.337255, 0.309804, 0.309804, 0.509804 )
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 210.0
+margin_bottom = 65.0
+texture = ExtResource( 9 )
+
+[node name="MainMenu" type="Button" parent="."]
+margin_left = 33.0
+margin_top = 22.0
+margin_right = 190.0
+margin_bottom = 72.0
+custom_colors/font_color_disabled = Color( 0.964706, 0.878431, 0.878431, 1 )
+custom_colors/font_color_focus = Color( 0.0156863, 0.988235, 0.713726, 1 )
+custom_colors/font_color = Color( 0.988235, 0.698039, 0.0156863, 1 )
+custom_colors/font_color_hover = Color( 0.913725, 0.729412, 0.027451, 1 )
+custom_colors/font_color_pressed = Color( 0.968627, 0.0117647, 0.0117647, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "MAIN MENU"
+flat = true
+script = ExtResource( 8 )
+
+[node name="MusicTitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[connection signal="pressed" from="ColorRect/levels/1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="ColorRect/levels/2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="ColorRect/levels/3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="ColorRect/levels/4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="ColorRect/levels/5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="MainMenu" to="MainMenu" method="_on_MainMenu_pressed"]

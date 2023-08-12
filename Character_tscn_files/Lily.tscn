@@ -1,0 +1,279 @@
+[gd_scene load_steps=63 format=2]
+
+[ext_resource path="res://Game_Assets/adventure_girl/png/Shoot (3).png" type="Texture" id=1]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (3).png" type="Texture" id=2]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (3).png" type="Texture" id=3]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (8).png" type="Texture" id=4]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (10).png" type="Texture" id=5]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (1).png" type="Texture" id=6]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (4).png" type="Texture" id=7]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (5).png" type="Texture" id=8]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (6).png" type="Texture" id=9]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (7).png" type="Texture" id=10]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (8).png" type="Texture" id=11]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (9).png" type="Texture" id=12]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (2).png" type="Texture" id=13]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (1).png" type="Texture" id=14]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (5).png" type="Texture" id=15]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (3).png" type="Texture" id=16]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (9).png" type="Texture" id=17]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (4).png" type="Texture" id=18]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (7).png" type="Texture" id=19]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (4).png" type="Texture" id=20]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (2).png" type="Texture" id=21]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (6).png" type="Texture" id=22]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (5).png" type="Texture" id=23]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (7).png" type="Texture" id=24]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (7).png" type="Texture" id=25]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (5).png" type="Texture" id=26]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (3).png" type="Texture" id=27]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (8).png" type="Texture" id=28]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (6).png" type="Texture" id=29]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (1).png" type="Texture" id=30]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (4).png" type="Texture" id=31]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (8).png" type="Texture" id=32]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (10).png" type="Texture" id=33]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Slide (1).png" type="Texture" id=34]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Slide (2).png" type="Texture" id=35]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Slide (3).png" type="Texture" id=36]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Idle (10).png" type="Texture" id=37]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Slide (5).png" type="Texture" id=38]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (6).png" type="Texture" id=39]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (1).png" type="Texture" id=40]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Slide (4).png" type="Texture" id=41]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Shoot (1).png" type="Texture" id=42]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Dead (9).png" type="Texture" id=43]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Jump (2).png" type="Texture" id=44]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Shoot (2).png" type="Texture" id=45]
+[ext_resource path="res://Game_Assets/adventure_girl/png/Run (2).png" type="Texture" id=46]
+[ext_resource path="res://Paused_ui.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Game_Assets/soundsandmusic/sounds/jump1.ogg" type="AudioStream" id=48]
+[ext_resource path="res://Game_Assets/soundsandmusic/music/BVT8YFD-game-fighting-pack.ogg" type="AudioStream" id=49]
+[ext_resource path="res://Game_Assets/soundsandmusic/sounds/playerdead.ogg" type="AudioStream" id=50]
+[ext_resource path="res://Game_Assets/soundsandmusic/sounds/player_slide.ogg" type="AudioStream" id=51]
+[ext_resource path="res://Game_Assets/soundsandmusic/sounds/glidesound.ogg" type="AudioStream" id=52]
+[ext_resource path="res://lily.gd" type="Script" id=53]
+[ext_resource path="res://platformer-p15-assets/UI/touch_arrow.png" type="Texture" id=54]
+[ext_resource path="res://platformer-p15-assets/UI/jump.png" type="Texture" id=55]
+[ext_resource path="res://platformer-p15-assets/UI/fire.png" type="Texture" id=56]
+[ext_resource path="res://platformer-p15-assets/UI/slide.png" type="Texture" id=57]
+[ext_resource path="res://platformer-p15-assets/UI/speed.png" type="Texture" id=60]
+[ext_resource path="res://extras/pause.png" type="Texture" id=61]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 32 ), ExtResource( 12 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 19 ), ExtResource( 28 ), ExtResource( 43 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 44 ), ExtResource( 3 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 12 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "slide",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 45 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "throw",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 46 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19, 35.5556 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 28 )
+
+[node name="Lily" type="Node2D"]
+
+[node name="lily" type="KinematicBody2D" parent="."]
+collision_mask = 6
+script = ExtResource( 53 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="AnimatedSprite" parent="lily"]
+position = Vector2( 8, 0 )
+scale = Vector2( 0.16, 0.146 )
+frames = SubResource( 4 )
+animation = "air"
+frame = 2
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="lily/sprite"]
+scale = Vector2( 6.25059, 6.867 )
+current = true
+limit_left = -100
+limit_top = -1800
+limit_right = 8355
+limit_bottom = 800
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 12.0
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lily"]
+light_mask = 0
+scale = Vector2( 1, 0.9 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="lily"]
+wait_time = 0.85
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="lily"]
+wait_time = 0.2
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="lily"]
+stream = ExtResource( 48 )
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="SoundHurt" type="AudioStreamPlayer" parent="lily"]
+stream = ExtResource( 49 )
+volume_db = 1.0
+pitch_scale = 2.3
+
+[node name="SoundDead" type="AudioStreamPlayer" parent="lily"]
+stream = ExtResource( 50 )
+pitch_scale = 2.0
+
+[node name="SoundSlide" type="AudioStreamPlayer2D" parent="lily"]
+position = Vector2( 0, -10 )
+rotation = 3.14159
+stream = ExtResource( 51 )
+volume_db = 15.0
+pitch_scale = 0.6
+
+[node name="SoundGlide" type="AudioStreamPlayer2D" parent="lily"]
+position = Vector2( 0, -10 )
+rotation = 3.14159
+stream = ExtResource( 52 )
+
+[node name="Wallchecker" type="RayCast2D" parent="lily"]
+position = Vector2( 0, 5 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 2
+
+[node name="TimerWin" type="Timer" parent="lily"]
+wait_time = 0.5
+
+[node name="SlideHelper" type="RayCast2D" parent="lily"]
+position = Vector2( 0, -10 )
+rotation = -1.5708
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 0, 30 )
+collision_mask = 2
+
+[node name="SlideHelper2" type="RayCast2D" parent="lily"]
+position = Vector2( 0, -10 )
+rotation = 3.14159
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 0, 25 )
+collision_mask = 2
+
+[node name="SlideHelper3" type="RayCast2D" parent="lily"]
+position = Vector2( 0, 28 )
+rotation = -1.5708
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 0, 30 )
+collision_mask = 2
+
+[node name="LadderChecker" type="Area2D" parent="lily"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lily/LadderChecker"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Paused_ui" parent="lily" instance=ExtResource( 47 )]
+
+[node name="Mobile_Controls" type="CanvasLayer" parent="lily"]
+
+[node name="right" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 250, 390 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 54 )
+action = "move_right"
+
+[node name="left" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 210, 530 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+normal = ExtResource( 54 )
+action = "move_left"
+
+[node name="jump" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 890, 250 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 55 )
+action = "jump"
+
+[node name="fire" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 750, 370 )
+scale = Vector2( 1.7, 1.7 )
+normal = ExtResource( 56 )
+action = "shoot"
+
+[node name="slide" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 900, 425 )
+scale = Vector2( 1.333, 1.333 )
+normal = ExtResource( 57 )
+action = "slide"
+
+[node name="speed" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 15, 15 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 60 )
+action = "run"
+
+[node name="pause" type="TouchScreenButton" parent="lily/Mobile_Controls"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 950, 5 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 61 )
+action = "pause"
+visibility_mode = 1
+
+[connection signal="timeout" from="lily/Timer" to="lily" method="_on_Timer_timeout"]
+[connection signal="timeout" from="lily/Timer2" to="lily" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="lily/TimerWin" to="lily" method="_on_TimerWin_timeout"]
+[connection signal="body_entered" from="lily/LadderChecker" to="lily" method="_on_LadderChecker_body_entered"]
+[connection signal="body_exited" from="lily/LadderChecker" to="lily" method="_on_LadderChecker_body_exited"]
